@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Wildy Slayer Efficiency</title>
+
+	<link rel="icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico">
+
+	<script src="script.js"></script>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+
+	<!-- 
+		TODO:
+			- Include a "help" button with instructions on using the calculator
+			- Add CSS to make the calculator look nicer
+			- Include an optional field for average task size; this can be used for an Average Task length (TIME) calculator for efficient wildy slayer keys/hr 
+			- Add a "reset form" button
+			- Fix up the formula for calculations; Superior rates are slightly higher than reality, because a superior kill results in one less non-superior kill. This is slightly offset by the extra time it takes to kill a superior though, which cannot be accounted for accurately with user-input task times.
+	-->
+</head>
+<body">
+	<h3>Larran's Keys/hr Calculator</h3>
+	<form>
+		<label>Kill Count &ensp; </label>
+		<input type="number" id="killCount" style="width: 60px;"><br>
+
+		<label><a href="https://oldschool.runescape.wiki/w/Larran%27s_key" target="_blank">Drop Rate</a> &ensp; 1/</label>
+		<input type="number" id="dropRate" style="width: 45px;"><br>
+
+		<label>Task Time &ensp; </label>
+		<input type="number" id="timeTakenMinutes" style="width: 70px;" placeholder="Minutes"> :
+		<input type="number" id="timeTakenSeconds" style="width: 70px;" placeholder="Seconds"><br>
+
+		<label>Superior Possible? &ensp; </label>
+		<input type="checkbox" id="superior"><br><br>
+
+		<input type="button" value="Calculate" onclick="keysPerHour()"><br>
+
+		<p id="keysResult"></p>
+		<p id="superiorsResult"></p>
+	</form>
+</body>
+</html>
