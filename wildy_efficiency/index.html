@@ -2,42 +2,73 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Wildy Slayer Efficiency</title>
+	<title>Wildy Slayer Calculator</title>
 
 	<link rel="icon" href="favicon.ico">
 	<link rel="icon" href="favicon.ico">
 
 	<script src="script.js"></script>
 	<!-- <link rel="stylesheet" href="style.css"> -->
-
-	<!-- 
-		TODO:
-			- Include a "help" button with instructions on using the calculator
-			- Add CSS to make the calculator look nicer
-			- Include an optional field for average task size; this can be used for an Average Task length (TIME) calculator for efficient wildy slayer keys/hr 
-			- Add a "reset form" button
-			- Fix up the formula for calculations; Superior rates are slightly higher than reality, because a superior kill results in one less non-superior kill. This is slightly offset by the extra time it takes to kill a superior though, which cannot be accounted for accurately with user-input task times.
-	-->
 </head>
 <body">
-	<h3>Larran's Keys/hr Calculator</h3>
+	<h3>Wilderness Task Efficiency Calculator</h3>
 	<form>
+		<label for="monster">Task: </label>
+		<select id="monster"> <!-- Ensure monster values match monster object names in script.js -->
+			<option value="AbyssalDemons">Abyssal Demons</option>
+			<option value="Ankou">Ankou (Slayer Cave)</option>
+			<option value="Aviansies">Aviansies (lvl 66)</option>
+			<option value="Bandits">Bandits (lvl 22)</option>
+			<option value="Bears">Bears (lvl 21)</option>
+			<option value="BlackDemons">Black Demons (Slayer Cave)</option>
+			<option value="BlackDragons">Black Dragons (Slayer Cave)</option>
+			<option value="BlackKnights">Black Knights</option>
+			<option value="Bloodveld">Bloodveld</option>
+			<option value="CDruids">Chaos Druids (Edgeville Dungeon)</option>
+			<option value="ElderCDruids">Elder Chaos Druids</option>
+			<option value="DarkWarrios">Dark Warriors (lvl 8)</option>
+			<option value="DustDevils">Dust Devils</option>
+			<option value="EarthWarriors">Earth Warriors</option>
+			<option value="Ents">Ents</option>
+			<option value="FireGiants">Fire Giants</option>
+			<option value="GreaterDemons">Greater Demons (Slayer Cave)</option>
+			<option value="GreenDragons">Green Dragons (Slayer Cave)</option>
+			<option value="Hellhounds">Hellhounds (Slayer Cave)</option>
+			<option value="HillGiants">Hill Giants</option>
+			<option value="IceGiants">Ice Giants (Slayer Cave)</option>
+			<option value="IceWarriors">Ice Warriors</option>
+			<option value="Jellies">Jellies</option>
+			<option value="LavaDragons">Lava Dragons</option>
+			<option value="LesserDemons">Lesser Demons (Slayer Cave)</option>
+			<option value="MagicAxes">Magic Axes</option>
+			<option value="Mammoths">Mammoths</option>
+			<option value="MossGiants">Moss Giants</option>
+			<option value="Nechryaels">Nechryaels</option>
+			<option value="Pirates">Pirates</option>
+			<option value="RevDarkBeasts">Revenants (Dark Beasts)</option>
+			<option value="RevKnights">Revenants (Knights)</option>
+			<option value="RevOrks">Revenants (Orks)</option>
+			<option value="RevQuadSpot">Revenants (Quad Spot)</option>
+			<option value="Rogues">Rogues (lvl 15)</option>
+			<option value="Scorpions">Scorpions (Scorpia's Offspring)</option>
+			<option value="Skeletons">Skeletons (lvl 22)</option>
+			<option value="Spiders">Spiders (lvl 1)</option>
+			<option value="SpMages">Spiritual Mages (All)</option>
+			<option value="Zombies">Zombies (Graveyard of Shadows)</option>
+		</select><br>
+
 		<label>Kill Count &ensp; </label>
 		<input type="number" id="killCount" style="width: 60px;"><br>
-
-		<label><a href="https://oldschool.runescape.wiki/w/Larran%27s_key" target="_blank">Drop Rate</a> &ensp; 1/</label>
-		<input type="number" id="dropRate" style="width: 45px;"><br>
 
 		<label>Task Time &ensp; </label>
 		<input type="number" id="timeTakenMinutes" style="width: 70px;" placeholder="Minutes"> :
 		<input type="number" id="timeTakenSeconds" style="width: 70px;" placeholder="Seconds"><br>
 
-		<label>Superior Possible? &ensp; </label>
-		<input type="checkbox" id="superior"><br><br>
-
-		<input type="button" value="Calculate" onclick="keysPerHour()"><br>
+		<input type="button" value="Calculate" onclick="calc()"><br>
 
 		<p id="keysResult"></p>
+		<p id="xpResult"></p>
+		<p id="speedResult"></p>
 		<p id="superiorsResult"></p>
 	</form>
 </body>
