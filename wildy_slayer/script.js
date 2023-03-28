@@ -54,15 +54,17 @@ function calc() {
     var killsPerHour        = (killCount / timeTaken) * 3600;
     var timeToKill          = (timeTaken / killCount);
     var monsterObject       = monsters[monster];
+    var taskLength          = (timeToKill * monsterObject["AverageLength"])
+    var taskLengthFormatted = formatTime(taskLength);
 
-    // Calculate results
+    // Calculate results. Check for superiors first, as superiors boost both Keys and XP
     if (monsterObject["SuperiorXP"] == "0") {
-        var keysPerHour = (killsPerHour / monsterObject["KeyRate"]);
-        var xpPerHour = (killsPerHour * monsterObject["XP"]);
-        var taskLength = (timeToKill * monsterObject["AverageLength"])
-
+        var keysPerHour         = (killsPerHour / monsterObject["KeyRate"]);
+        var xpPerHour           = (killsPerHour * monsterObject["XP"]);
+        
         document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
         document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
+        document.getElementById("speedResult").innerHTML = "Average Task Length (No extends or bracelets): " + taskLengthFormatted;
         document.getElementById("superiorsResult").innerHTML = "Superiors/hr: n/a";
     } else {
         var superiorsPerHour = (killsPerHour / 200);
@@ -71,6 +73,19 @@ function calc() {
 
         document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
         document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
+        document.getElementById("speedResult").innerHTML = "Average Task Length (No extends or bracelets): " + taskLengthFormatted;
         document.getElementById("superiorsResult").innerHTML = "Superiors/hr: " + superiorsPerHour.toFixed(2);
+    }
+}
+
+function formatTime(taskLength) {
+    var hours = Math.floor(taskLength / 3600);
+    var minutes = Math.floor((taskLength % 3600) / 60);
+    var seconds = Math.floor(taskLength % 60);
+
+    if (hours > 0) {
+        return hours + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+    } else {
+        return minutes + ":" + seconds.toString().padStart(2, "0");
     }
 }
