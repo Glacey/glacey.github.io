@@ -54,27 +54,45 @@ function calc() {
     var timeTaken           = (timeTakenMinutes * 60) + timeTakenSeconds;
     var killsPerHour        = (killCount / timeTaken) * 3600;
     var timeToKill          = (timeTaken / killCount);
-    var taskLength          = (timeToKill * monsterObject["AverageLength"])
-    var taskLengthFormatted = formatTime(taskLength);
 
-    // Calculate results. Check for superiors first, as superiors boost both Keys and XP
+    // Calculate various task lengths, format to time string (i.e; 12:54)
+    var taskLength                      = formatTime((timeToKill * monsterObject["AverageLength"]));
+    var taskLengthExpeditious           = formatTime((timeToKill * (monsterObject["AverageLength"] * 0.75)));
+    var taskLengthSlaughter             = formatTime((timeToKill * (monsterObject["AverageLength"] * 1.333)));
+    if (monsterObject["ExtendedLength"] != 0) {
+        var taskLengthExtended              = formatTime((timeToKill * monsterObject["ExtendedLength"]));
+        var taskLengthExtendedExpeditious   = formatTime((timeToKill * (monsterObject["ExtendedLength"] * 0.75)));
+        var taskLengthExtendedSlaughter     = formatTime((timeToKill * (monsterObject["ExtendedLength"] * 1.333)));
+    }
+
+    // Calculate xp/hr, keys/hr, and superiors/hr
     if (monsterObject["SuperiorXP"] == "0") {
         var keysPerHour         = (killsPerHour / monsterObject["KeyRate"]);
         var xpPerHour           = (killsPerHour * monsterObject["XP"]);
-        
-        document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
-        document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
-        document.getElementById("speedResult").innerHTML = "Average Task Length (No extends or bracelets): " + taskLengthFormatted;
-        document.getElementById("superiorsResult").innerHTML = "Superiors/hr: n/a";
+
+        document.getElementById("superiorsResult").innerHTML = "Superiors/hr: n/a"; 
     } else {
         var superiorsPerHour = (killsPerHour / 200);
         var keysPerHour = ((killsPerHour / monsterObject["KeyRate"]) + superiorsPerHour);
         var xpPerHour = ((killsPerHour * monsterObject["XP"]) + (superiorsPerHour * monsterObject["SuperiorXP"]));
 
-        document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
-        document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
-        document.getElementById("speedResult").innerHTML = "Average Task Length (No extends or bracelets): " + taskLengthFormatted;
         document.getElementById("superiorsResult").innerHTML = "Superiors/hr: " + superiorsPerHour.toFixed(2);
+    }
+
+    // Update HTML page with results
+    document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
+    document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
+    document.getElementById("speedResult").innerHTML = "Average Task Length: " + taskLength;
+    document.getElementById("speedResultExpeditious").innerHTML = "Average Task Length (Expeditious Bracelets): " + taskLengthExpeditious;
+    document.getElementById("speedResultSlaughter").innerHTML = "Average Task Length (Slaughter Bracelets): " + taskLengthSlaughter;
+    if (monsterObject["ExtendedLength"] == 0) {
+        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (Extended): n/a";
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (Extended + Expeditious Bracelets): n/a";
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (Extended + Slaughter Bracelets): n/a";
+    } else {
+        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (Extended): " + taskLengthExtended;
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (Extended + Expeditious Bracelets): " + taskLengthExtendedExpeditious;
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (Extended + Slaughter Bracelets): " + taskLengthExtendedSlaughter;
     }
 }
 
