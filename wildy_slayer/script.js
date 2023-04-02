@@ -83,16 +83,16 @@ function calc() {
     document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
     document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
     document.getElementById("speedResult").innerHTML = "Average Task Length: " + taskLength;
-    document.getElementById("speedResultExpeditious").innerHTML = "Average Task Length (Expeditious Bracelets): " + taskLengthExpeditious;
-    document.getElementById("speedResultSlaughter").innerHTML = "Average Task Length (Slaughter Bracelets): " + taskLengthSlaughter;
+    document.getElementById("speedResultExpeditious").innerHTML = "Average Task Length (<img src=\"images/expeditious.webp\">): " + taskLengthExpeditious;
+    document.getElementById("speedResultSlaughter").innerHTML = "Average Task Length (<img src=\"images/slaughter.webp\">): " + taskLengthSlaughter;
     if (monsterObject["ExtendedLength"] == 0) {
-        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (Extended): n/a";
-        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (Extended + Expeditious Bracelets): n/a";
-        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (Extended + Slaughter Bracelets): n/a";
+        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): n/a";
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">): n/a";
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">): n/a";
     } else {
-        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (Extended): " + taskLengthExtended;
-        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (Extended + Expeditious Bracelets): " + taskLengthExtendedExpeditious;
-        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (Extended + Slaughter Bracelets): " + taskLengthExtendedSlaughter;
+        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): " + taskLengthExtended;
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">): " + taskLengthExtendedExpeditious;
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">): " + taskLengthExtendedSlaughter;
     }
 }
 
