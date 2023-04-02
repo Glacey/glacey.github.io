@@ -70,7 +70,7 @@ function calc() {
         var keysPerHour         = (killsPerHour / monsterObject["KeyRate"]);
         var xpPerHour           = (killsPerHour * monsterObject["XP"]);
 
-        document.getElementById("superiorsResult").innerHTML = "Superiors/hr: n/a"; 
+        document.getElementById("superiorsResult").innerHTML = "--"; 
     } else {
         var superiorsPerHour = (killsPerHour / 200);
         var keysPerHour = ((killsPerHour / monsterObject["KeyRate"]) + superiorsPerHour);
@@ -82,16 +82,16 @@ function calc() {
     // Update HTML page with results
     document.getElementById("keysResult").innerHTML = "Larran's Keys/hr: " + keysPerHour.toFixed(2);
     document.getElementById("xpResult").innerHTML = "XP/hr: " + xpPerHour.toLocaleString();
-    document.getElementById("speedResult").innerHTML = "Average Task Length: " + taskLength;
     document.getElementById("speedResultExpeditious").innerHTML = "Average Task Length (<img src=\"images/expeditious.webp\">): " + taskLengthExpeditious;
+    document.getElementById("speedResult").innerHTML = "Average Task Length: " + taskLength;
     document.getElementById("speedResultSlaughter").innerHTML = "Average Task Length (<img src=\"images/slaughter.webp\">): " + taskLengthSlaughter;
     if (monsterObject["ExtendedLength"] == 0) {
-        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): n/a";
-        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">): n/a";
-        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">): n/a";
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "--";
+        document.getElementById("speedResultExtended").innerHTML = "--";
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "--";
     } else {
-        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): " + taskLengthExtended;
         document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">): " + taskLengthExtendedExpeditious;
+        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): " + taskLengthExtended;
         document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">): " + taskLengthExtendedSlaughter;
     }
 }
