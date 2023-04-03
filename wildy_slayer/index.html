@@ -5,75 +5,81 @@
 	<title>Wildy Slayer Calculator</title>
 
 	<link rel="icon" href="images/favicon.ico">
-
-	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
 </head>
-<body">
-	<h3>Wildy Slayer Calculator</h3>
-	<form>
-		<label for="monster">Task: </label>
-		<select id="monster"> <!-- Ensure monster values match monster object names in script.js -->
-			<option value="AbyssalDemons">Abyssal Demons</option>
-			<option value="Ankou">Ankou (Slayer Cave)</option>
-			<option value="Aviansies">Aviansies (lvl 66)</option>
-			<option value="Bandits">Bandits (lvl 22)</option>
-			<option value="Bears">Bears (lvl 21)</option>
-			<option value="BlackDemons">Black Demons (Slayer Cave)</option>
-			<option value="BlackDragons">Black Dragons (Slayer Cave)</option>
-			<option value="BlackKnights">Black Knights</option>
-			<option value="Bloodveld">Bloodveld</option>
-			<option value="CDruids">Chaos Druids (Edgeville Dungeon)</option>
-			<option value="ElderCDruids">Elder Chaos Druids</option>
-			<option value="DarkWarrios">Dark Warriors (lvl 8)</option>
-			<option value="DustDevils">Dust Devils</option>
-			<option value="EarthWarriors">Earth Warriors</option>
-			<option value="Ents">Ents</option>
-			<option value="FireGiants">Fire Giants</option>
-			<option value="GreaterDemons">Greater Demons (Slayer Cave)</option>
-			<option value="GreenDragons">Green Dragons (Slayer Cave)</option>
-			<option value="Hellhounds">Hellhounds (Slayer Cave)</option>
-			<option value="HillGiants">Hill Giants</option>
-			<option value="IceGiants">Ice Giants (Slayer Cave)</option>
-			<option value="IceWarriors">Ice Warriors</option>
-			<option value="Jellies">Jellies</option>
-			<option value="LavaDragons">Lava Dragons</option>
-			<option value="LesserDemons">Lesser Demons (Slayer Cave)</option>
-			<option value="MagicAxes">Magic Axes</option>
-			<option value="Mammoths">Mammoths</option>
-			<option value="MossGiants">Moss Giants</option>
-			<option value="Nechryaels">Nechryaels</option>
-			<option value="Pirates">Pirates</option>
-			<option value="RevDarkBeasts">Revenants (Dark Beasts)</option>
-			<option value="RevKnights">Revenants (Knights)</option>
-			<option value="RevOrks">Revenants (Orks)</option>
-			<option value="RevQuadSpot">Revenants (Quad Spot)</option>
-			<option value="Rogues">Rogues (lvl 15)</option>
-			<option value="Scorpions">Scorpions (Scorpia's Offspring)</option>
-			<option value="Skeletons">Skeletons (lvl 22)</option>
-			<option value="Spiders">Spiders (lvl 1)</option>
-			<option value="SpMages">Spiritual Mages (All)</option>
-			<option value="Zombies">Zombies (Graveyard of Shadows)</option>
-		</select><br>
+<body>
+	<div class ="container">
+		<div id="calculator">
+			<h1>Wildy Slayer Calculator</h1>
+			<form>
+				<label for="monster">Task: </label>
+				<select id="monster"> <!-- Ensure "value" matches monster object names in script.js -->
+					<option value="AbyssalDemons">Abyssal Demons</option>
+					<option value="Ankou">Ankou (Slayer Cave)</option>
+					<option value="Aviansies">Aviansies (lvl 66)</option>
+					<option value="Bandits">Bandits (lvl 22)</option>
+					<option value="Bears">Bears (lvl 21)</option>
+					<option value="BlackDemons">Black Demons (Slayer Cave)</option>
+					<option value="BlackDragons">Black Dragons (Slayer Cave)</option>
+					<option value="BlackKnights">Black Knights</option>
+					<option value="Bloodveld">Bloodveld</option>
+					<option value="CDruids">Chaos Druids (Edgeville Dungeon)</option>
+					<option value="ElderCDruids">Elder Chaos Druids</option>
+					<option value="DarkWarrios">Dark Warriors (lvl 8)</option>
+					<option value="DustDevils">Dust Devils</option>
+					<option value="EarthWarriors">Earth Warriors</option>
+					<option value="Ents">Ents</option>
+					<option value="FireGiants">Fire Giants</option>
+					<option value="GreaterDemons">Greater Demons (Slayer Cave)</option>
+					<option value="GreenDragons">Green Dragons (Slayer Cave)</option>
+					<option value="Hellhounds">Hellhounds (Slayer Cave)</option>
+					<option value="HillGiants">Hill Giants</option>
+					<option value="IceGiants">Ice Giants (Slayer Cave)</option>
+					<option value="IceWarriors">Ice Warriors</option>
+					<option value="Jellies">Jellies</option>
+					<option value="LavaDragons">Lava Dragons</option>
+					<option value="LesserDemons">Lesser Demons (Slayer Cave)</option>
+					<option value="MagicAxes">Magic Axes</option>
+					<option value="Mammoths">Mammoths</option>
+					<option value="MossGiants">Moss Giants</option>
+					<option value="Nechryaels">Nechryaels</option>
+					<option value="Pirates">Pirates</option>
+					<option value="RevDarkBeasts">Revenants (Dark Beasts)</option>
+					<option value="RevKnights">Revenants (Knights)</option>
+					<option value="RevOrks">Revenants (Orks)</option>
+					<option value="RevQuadSpot">Revenants (Quad Spot)</option>
+					<option value="Rogues">Rogues (lvl 15)</option>
+					<option value="Scorpions">Scorpions (Scorpia's Offspring)</option>
+					<option value="Skeletons">Skeletons (lvl 22)</option>
+					<option value="Spiders">Spiders (lvl 1)</option>
+					<option value="SpMages">Spiritual Mages (All)</option>
+					<option value="Zombies">Zombies (Graveyard of Shadows)</option>
+				</select><br>
 
-		<label>Kill Count &ensp; </label>
-		<input type="number" id="killCount" style="width: 60px;"><br>
+				<label>Kill Count: </label>
+				<input type="number" id="killCount" style="width: 60px;"><br>
 
-		<label>Task Time &ensp; </label>
-		<input type="number" id="timeTakenMinutes" style="width: 70px;" placeholder="Minutes"> :
-		<input type="number" id="timeTakenSeconds" style="width: 70px;" placeholder="Seconds"><br>
+				<label>Task Time: </label>
+				<input type="number" id="timeTakenMinutes" style="width: 70px;" placeholder="Minutes"> :
+				<input type="number" id="timeTakenSeconds" style="width: 70px;" placeholder="Seconds"><br>
 
-		<input type="button" value="Calculate" onclick="calc()"><br>
-
-		<p id="keysResult"></p>
-		<p id="xpResult"></p>
-		<p id="superiorsResult"></p>
-		<p id="speedResultExpeditious"></p>
-		<p id="speedResult"></p>
-		<p id="speedResultSlaughter"></p>
-		<p id="speedResultExtendedExpeditious"></p>
-		<p id="speedResultExtended"></p>
-		<p id="speedResultExtendedSlaughter"></p>
-	</form>
+				<input type="button" value="Calculate" onclick="calc()">
+			</form>
+		</div>
+		<div id="results1">
+			<p id="keysResult"></p>
+			<p id="xpResult"></p>
+			<p id="superiorsResult"></p>
+		</div>
+		<div id="results2">
+			<p id="speedResultExpeditious"></p>
+			<p id="speedResult"></p>
+			<p id="speedResultSlaughter"></p>
+			<p id="speedResultExtendedExpeditious"></p>
+			<p id="speedResultExtended"></p>
+			<p id="speedResultExtendedSlaughter"></p>
+		</div>
+	</div>	
 </body>
 </html>
