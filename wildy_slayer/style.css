@@ -64,6 +64,7 @@ h1{
 	#calculator{
 		height:auto;
 		text-align:center;
+		padding-left:1em;
 	}
 
 	#results1{
