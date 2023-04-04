@@ -51,8 +51,19 @@ function calc() {
     var monster             = document.getElementById("monster").value; // Get monster name from HTML form
     var monsterObject       = monsters[monster]; // Get monster object from JS array
     var killCount           = parseInt(document.getElementById("killCount").value);
-    var timeTakenMinutes    = parseInt(document.getElementById("timeTakenMinutes").value);
-    var timeTakenSeconds    = parseInt(document.getElementById("timeTakenSeconds").value);
+    
+    // Get time data; autofill "0" if no time was entered
+    if (isNaN(parseInt(document.getElementById("timeTakenMinutes").value)) == true) { 
+        var timeTakenMinutes = 0;
+    } else {
+        var timeTakenMinutes = parseInt(document.getElementById("timeTakenMinutes").value);
+    }
+    if (isNaN(parseInt(document.getElementById("timeTakenSeconds").value)) == true) {
+        var timeTakenSeconds = 0;
+    } else {
+        var timeTakenSeconds = parseInt(document.getElementById("timeTakenSeconds").value);
+    }
+    
 
     // Convert units for calculations
     var timeTaken           = (timeTakenMinutes * 60) + timeTakenSeconds;
@@ -100,7 +111,7 @@ function calc() {
     }
 }
 
-// Formats time (in seconds) to a string with format "Hours:Minutes:Seconds"
+// Formats time (in seconds) to a string with format "Hours:Minutes:Seconds".
 function formatTime(seconds) {
     var hours = Math.floor(seconds / 3600);
     var minutes = Math.floor((seconds % 3600) / 60);
@@ -125,13 +136,13 @@ function about(){
     // Open or Close the about section:
     if(document.getElementById("about").style.backgroundColor == "rgb(249, 243, 235)") {
         // Close the about section
-        document.querySelector(".aboutbutton").value = "More Info"
+        document.querySelector(".aboutbutton").value = "More Info";
 
         document.getElementById("about").style.backgroundColor = "";
         document.getElementById("info").innerHTML = "";
     } else {
         // Display the about section
-        document.querySelector(".aboutbutton").value = "Close Info"
+        document.querySelector(".aboutbutton").value = "Close Info";
 
         document.getElementById("about").style.backgroundColor = "#F9F3EB";
         document.getElementById("info").innerHTML = aboutString;

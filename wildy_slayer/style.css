@@ -96,4 +96,8 @@ h1{
 			"results2"
 			"about";
 	}
+
+	#calculator h1{
+		text-align:center;
+	}
 }
