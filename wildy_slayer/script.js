@@ -125,13 +125,13 @@ function about(){
     // Open or Close the about section:
     if(document.getElementById("about").style.backgroundColor == "rgb(249, 243, 235)") {
         // Close the about section
-        document.getElementById("aboutbutton").value = "More Info"
+        document.querySelector(".aboutbutton").value = "More Info"
 
         document.getElementById("about").style.backgroundColor = "";
         document.getElementById("info").innerHTML = "";
     } else {
         // Display the about section
-        document.getElementById("aboutbutton").value = "Close Info"
+        document.querySelector(".aboutbutton").value = "Close Info"
 
         document.getElementById("about").style.backgroundColor = "#F9F3EB";
         document.getElementById("info").innerHTML = aboutString;
