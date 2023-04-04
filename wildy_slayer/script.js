@@ -43,6 +43,10 @@ const monsters = {
 };
 
 function calc() {
+    // Make background visible
+    document.getElementById("results1").style.background = "#F9F3EB";
+    document.getElementById("results2").style.background = "#F9F3EB";
+
     // Get data from form
     var monster             = document.getElementById("monster").value; // Get monster name from HTML form
     var monsterObject       = monsters[monster]; // Get monster object from JS array
@@ -106,5 +110,30 @@ function formatTime(seconds) {
         return hours + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
     } else {
         return minutes + ":" + seconds.toString().padStart(2, "0");
+    }
+}
+
+function about(){
+    var aboutString = 
+        "To use: <br><br>"
+        +"1. Start a timer after getting assigned a slayer task, then stop the timer when you turn in your completed task.<br>"
+        +"2. Fill in number of kills provided in the chat (this number accounts for exepeditious/slaughter bracelets!) in the \"Kill Count\" box, then write down the timer in the \"Task Time\" box.<br><br>"
+        +"More Info: <br><br>"
+        +"\"Average Task Time\" refers to the amount of time it would take to complete an average length task assigned by Krystilia, assuming you kill monsters at the same speed of the calculated task. "
+        +"This can be used to assess the points/hr of a task, or to see how long you could sustain high XP and Key rates if you used a slaughter bracelet and/or task extension.";
+
+    // Open or Close the about section:
+    if(document.getElementById("about").style.backgroundColor == "rgb(249, 243, 235)") {
+        // Close the about section
+        document.getElementById("aboutbutton").value = "More Info"
+
+        document.getElementById("about").style.backgroundColor = "";
+        document.getElementById("info").innerHTML = "";
+    } else {
+        // Display the about section
+        document.getElementById("aboutbutton").value = "Close Info"
+
+        document.getElementById("about").style.backgroundColor = "#F9F3EB";
+        document.getElementById("info").innerHTML = aboutString;
     }
 }

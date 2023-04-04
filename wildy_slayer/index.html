@@ -65,7 +65,8 @@
 				<input type="number" id="timeTakenMinutes" style="width: 70px;" placeholder="Minutes"> :
 				<input type="number" id="timeTakenSeconds" style="width: 70px;" placeholder="Seconds"><br>
 
-				<input type="button" value="Calculate" onclick="calc()">
+				<input type="button" class="calcbutton" value="Calculate" onclick="calc()">
+				<input type="button" class="aboutbutton" id="aboutbutton" value="More Info" onclick="about()">
 			</form>
 		</div>
 		<div id="results1">
@@ -82,6 +83,7 @@
 			<p id="speedResultExtendedSlaughter"></p>
 		</div>
 		<div id="about">
+			<p id="info"></p>
 		</div>
 	</div>	
 </body>

@@ -14,6 +14,35 @@ h1{
 	font-size: 1.5em;
 }
 
+.calcbutton, .aboutbutton{
+	padding:0.5em;
+	padding-left:0.75em;
+	padding-right:0.75em;
+	border-radius:5px;
+	border:1px solid #000000;
+	margin-top:0.75em;
+	margin-right:0.5em;
+}
+
+.calcbutton{
+	background-color:#605443;
+	color:white;
+	font-weight: bold;
+	box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2), 0 0.75em 1.25em 0 rgba(0,0,0,0.19);
+}
+
+.calcbutton:hover{
+	background-color:#7d6d57;
+}
+
+.aboutbutton{
+	background-color:EFEEE6;
+}
+
+.aboutbutton:hover{
+	background-color:#FFFFFF;
+}
+
 .container{
 	display:grid;
 	grid-template-columns: 16em 25em;
@@ -24,7 +53,6 @@ h1{
 		"about about";
 	grid-gap:0.25em;
 	justify-content:center;
-	
 }
 
 #calculator{
@@ -37,26 +65,25 @@ h1{
 
 	/* Content Style */
 	text-align:left;
-	font-size:1em;
 	line-height:1.25em;
 }
 
 #results1{
 	grid-area:results1;
 	border-radius: var(--radius);
-	background:#F9F3EB;
 }
 
 #results2{
 	grid-area:results2;
 	border-radius: var(--radius);
-	background:#F9F3EB;
 }
 
 #about{
 	grid-area:about;
 	border-radius: var(--radius);
-	background:#F9F3EB;
+	text-align:left;
+	padding-left:1.25em;
+	font-size:1em;
 }
 
 @media only screen and (max-width:750px){
@@ -68,10 +95,5 @@ h1{
 			"results1"
 			"results2"
 			"about";
-	}
-
-	#calculator{
-		text-align:center;
-		padding-left:0em;
 	}
 }
