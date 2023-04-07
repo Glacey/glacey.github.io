@@ -1,5 +1,5 @@
 :root {
-	--radius: 5px;
+	--radius:5px;
 	font-size:16px;
 	font-family: Arial, sans-serif;
 	text-align:center;
@@ -11,7 +11,7 @@ body{
 }
 
 h1{
-	font-size: 1.5em;
+	font-size:1.5em;
 }
 
 .calcbutton, .aboutbutton{
@@ -99,6 +99,6 @@ h1{
 
 	#calculator h1{
 		text-align:center;
-		padding-left:0em;
+		padding-right:0.8em;
 	}
 }
