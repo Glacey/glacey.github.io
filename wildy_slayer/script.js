@@ -1,4 +1,15 @@
-// Task Data (Last updated: March 28, 2023):
+/* Slayer Task Data:
+Variables:
+    - KeyRate: Drop rate of a Larran's Key from the assigned monster. ex: 1/[79]
+    - XP: XP from killing one monster. ex: [150]
+    - AverageLength: The average assigned slayer task length. ex: 75-125 is [100]
+    - ExtendedLength: Average assigned slayer task length when using the "Task Extension" unlock. [0] for no extension possible, 200-250 is [225]
+    - SuperiorXP: XP gained from killing the superior version of the monster. ex: Greater abyssal demon is [4200]
+
+If there are different levels or places to kill the monster that affect drop rates, 
+make sure to clarify in the HTML form. ex: Revenants (Quad Spot), Skeletons (lvl 22), Greater Demons (Slayer Cave)
+*/
+var LastUpdated = "March 28, 2023";
 const monsters = {
   AbyssalDemons:{ KeyRate: "79",    XP: "150",  AverageLength: "100",   ExtendedLength: "225",  SuperiorXP: "4200" },
   Ankou:        { KeyRate: "82",    XP: "100",  AverageLength: "100",   ExtendedLength: "120.5",SuperiorXP: "0" },
@@ -49,7 +60,7 @@ function calc() {
 
     // Get data from form
     var monster             = document.getElementById("monster").value; // Get monster name from HTML form
-    var monsterObject       = monsters[monster]; // Get monster object from JS array
+    var monsterObject       = monsters[monster]; // Get monster object from JS array, from the name in the HTML form
     var killCount           = parseInt(document.getElementById("killCount").value);
     
     // Get time data; autofill "0" if no time was entered
@@ -127,11 +138,11 @@ function formatTime(seconds) {
 function about(){
     var aboutString = 
         "To use: <br><br>"
-        +"1. Start a timer after getting assigned a slayer task, then stop the timer when you turn in your completed task.<br>"
-        +"2. Fill in number of kills provided in the chat (this number accounts for exepeditious/slaughter bracelets!) in the \"Kill Count\" box, then write down the timer in the \"Task Time\" box.<br><br>"
-        +"More Info: <br><br>"
+        +"1. Start a timer when you're assigned a slayer task. Stop the timer when you turn in your completed task.<br>"
+        +"2. Fill in the number of kills provided by the chat (this number accounts for exepeditious/slaughter bracelets!) in the \"Kill Count\" box, then write down the timer in the \"Task Time\" box.<br><br>"
         +"\"Average Task Time\" refers to the amount of time it would take to complete an average length task assigned by Krystilia, assuming you kill monsters at the same speed of the calculated task. "
-        +"This can be used to assess the points/hr of a task, or to see how long you could sustain high XP and Key rates if you used a slaughter bracelet and/or task extension.";
+        +"This can be used to assess the points/hr of a task, or to see how long high XP and Key rates last when using a slaughter bracelet and/or task extension.<br><br>"
+        +"Slayer task data last updated: "+LastUpdated;
 
     // Open or Close the about section:
     if(document.getElementById("about").style.backgroundColor == "rgb(249, 243, 235)") {
