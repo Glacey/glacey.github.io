@@ -108,17 +108,17 @@ function calc() {
     // Update HTML page with results
     document.getElementById("keysResult").innerHTML = "<img src=\"images/favicon.ico\"> Larran's Keys/hr: <br>" + keysPerHour.toFixed(2);
     document.getElementById("xpResult").innerHTML = "<img src=\"images/xp.webp\"> XP/hr: <br>" + xpPerHour.toLocaleString();
-    document.getElementById("speedResultExpeditious").innerHTML = "Average Task Length (<img src=\"images/expeditious.webp\">): <br>" + taskLengthExpeditious;
+    document.getElementById("speedResultExpeditious").innerHTML = "<img src=\"images/expeditious.webp\">: <br>" + taskLengthExpeditious;
     document.getElementById("speedResult").innerHTML = "Average Task Length: <br>" + taskLength;
-    document.getElementById("speedResultSlaughter").innerHTML = "Average Task Length (<img src=\"images/slaughter.webp\">): <br>" + taskLengthSlaughter;
+    document.getElementById("speedResultSlaughter").innerHTML = "<img src=\"images/slaughter.webp\">: <br>" + taskLengthSlaughter;
     if (monsterObject["ExtendedLength"] == 0) {
         document.getElementById("speedResultExtendedExpeditious").innerHTML = "";
         document.getElementById("speedResultExtended").innerHTML = "";
         document.getElementById("speedResultExtendedSlaughter").innerHTML = "";
     } else {
-        document.getElementById("speedResultExtendedExpeditious").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">): <br>" + taskLengthExtendedExpeditious;
-        document.getElementById("speedResultExtended").innerHTML = "Average Task Length (<img src=\"images/extend.webp\">): <br>" + taskLengthExtended;
-        document.getElementById("speedResultExtendedSlaughter").innerHTML = "Average Task Length (<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">): <br>" + taskLengthExtendedSlaughter;
+        document.getElementById("speedResultExtendedExpeditious").innerHTML = "<img src=\"images/extend.webp\"> + <img src=\"images/expeditious.webp\">: <br>" + taskLengthExtendedExpeditious;
+        document.getElementById("speedResultExtended").innerHTML = "<img src=\"images/extend.webp\">: <br>" + taskLengthExtended;
+        document.getElementById("speedResultExtendedSlaughter").innerHTML = "<img src=\"images/extend.webp\"> + <img src=\"images/slaughter.webp\">: <br>" + taskLengthExtendedSlaughter;
     }
 }
 
