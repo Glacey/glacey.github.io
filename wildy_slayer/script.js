@@ -90,6 +90,7 @@ function calc() {
         var taskLengthExtendedExpeditious   = formatTime((timeToKill * (monsterObject["ExtendedLength"] * 0.75)));
         var taskLengthExtendedSlaughter     = formatTime((timeToKill * (monsterObject["ExtendedLength"] * 1.333)));
     }
+    
 
     // Calculate xp/hr, keys/hr, and superiors/hr
     if (monsterObject["SuperiorXP"] == "0") {
@@ -98,7 +99,12 @@ function calc() {
 
         document.getElementById("superiorsResult").innerHTML = ""; 
     } else {
-        var superiorsPerHour = (killsPerHour / 200);
+        if (document.getElementById("eliteCA").checked) {
+            var superiorRate = 150;
+        } else {
+            var superiorRate = 200;
+        }
+        var superiorsPerHour = (killsPerHour / superiorRate);
         var keysPerHour = ((killsPerHour / monsterObject["KeyRate"]) + superiorsPerHour);
         var xpPerHour = ((killsPerHour * monsterObject["XP"]) + (superiorsPerHour * monsterObject["SuperiorXP"]));
 
