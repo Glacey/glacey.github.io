@@ -9,7 +9,7 @@ Variables:
 If there are different levels or places to kill the monster that affect drop rates, 
 make sure to clarify in the HTML form. ex: Revenants (Quad Spot), Skeletons (lvl 22), Greater Demons (Slayer Cave)
 */
-var LastUpdated = "March 28, 2023";
+var LastUpdated = "August 23, 2023";
 const monsters = {
   AbyssalDemons:{ KeyRate: "79",    XP: "150",  AverageLength: "100",   ExtendedLength: "225",  SuperiorXP: "4200" },
   Ankou:        { KeyRate: "82",    XP: "100",  AverageLength: "100",   ExtendedLength: "120.5",SuperiorXP: "0" },
@@ -41,10 +41,10 @@ const monsters = {
   MossGiants:   { KeyRate: "533",   XP: "60",   AverageLength: "125",   ExtendedLength: "0",    SuperiorXP: "0" },
   Nechryaels:   { KeyRate: "66",    XP: "210",  AverageLength: "100",   ExtendedLength: "225",  SuperiorXP: "3280" },
   Pirates:      { KeyRate: "304",   XP: "20",   AverageLength: "68.5",  ExtendedLength: "0",    SuperiorXP: "0" },
-  RevDarkBeasts:{ KeyRate: "91",    XP: "157",  AverageLength: "70",    ExtendedLength: "0",    SuperiorXP: "0" },
-  RevKnights:   { KeyRate: "90",    XP: "168",  AverageLength: "70",    ExtendedLength: "0",    SuperiorXP: "0" },
-  RevOrks:      { KeyRate: "94",    XP: "115",  AverageLength: "70",    ExtendedLength: "0",    SuperiorXP: "0" },
-  RevQuadSpot:  { KeyRate: "96.5",  XP: "102.5",AverageLength: "70",    ExtendedLength: "0",    SuperiorXP: "0" },
+  RevDarkBeasts:{ KeyRate: "91",    XP: "157",  AverageLength: "70",    ExtendedLength: "125",  SuperiorXP: "0" },
+  RevKnights:   { KeyRate: "90",    XP: "168",  AverageLength: "70",    ExtendedLength: "125",  SuperiorXP: "0" },
+  RevOrks:      { KeyRate: "94",    XP: "115",  AverageLength: "70",    ExtendedLength: "125",  SuperiorXP: "0" },
+  RevQuadSpot:  { KeyRate: "96.5",  XP: "102.5",AverageLength: "70",    ExtendedLength: "125",  SuperiorXP: "0" },
   Rogues:       { KeyRate: "1367",  XP: "17",   AverageLength: "100",   ExtendedLength: "0",    SuperiorXP: "0" },
   Scorpions:    { KeyRate: "1367",  XP: "2",    AverageLength: "82.5",  ExtendedLength: "0",    SuperiorXP: "0" },
   Skeletons:    { KeyRate: "1144",  XP: "29",   AverageLength: "82.5",  ExtendedLength: "0",    SuperiorXP: "0" },
