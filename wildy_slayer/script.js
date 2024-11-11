@@ -99,10 +99,11 @@ function calc() {
 
         document.getElementById("superiorsResult").innerHTML = ""; 
     } else {
+        // All Superior tasks are assumed to be in the Wilderness Slayer Cave, which has a 10% increased chance of superiors
         if (document.getElementById("eliteCA").checked) {
-            var superiorRate = 150;
+            var superiorRate = 135;
         } else {
-            var superiorRate = 200;
+            var superiorRate = 180;
         }
         var superiorsPerHour = (killsPerHour / superiorRate);
         var keysPerHour = ((killsPerHour / monsterObject["KeyRate"]) + superiorsPerHour);
@@ -147,8 +148,10 @@ function about(){
         +"1. Start a timer when you're assigned a slayer task. Stop the timer when you turn in your completed task.<br>"
         +"2. Fill in the number of kills provided by the chat (this number accounts for exepeditious/slaughter bracelets!) in the \"Kill Count\" box, then write down the timer in the \"Task Time\" box.<br><br>"
         +"\"Average Task Time\" refers to the amount of time it would take to complete an average length task assigned by Krystilia, assuming you kill monsters at the same speed of the calculated task. "
-        +"This can be used to assess the points/hr of a task, or to see how long high XP and Key rates last when using a slaughter bracelet and/or task extension.<br><br>"
-        +"Slayer task data last updated: "+LastUpdated;
+        +"This can be used to assess the points/hr of a task, or to see how long high XP/Key/Superior rates last when using a slaughter bracelet and/or task extension.<br><br>"
+        +"Slayer task data last updated: "+LastUpdated
+        +"<br><br>Updated November 11th, 2024 to account for the 10% increased superior chance in the wilderness.";
+
 
     // Open or Close the about section:
     if(document.getElementById("about").style.backgroundColor == "rgb(249, 243, 235)") {
